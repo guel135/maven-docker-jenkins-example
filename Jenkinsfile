@@ -1,9 +1,16 @@
 pipeline {
     agent {label 'dockerplay'}
     stages {
+        stage ('hostname'){
+            steps
+            {
+                sh 'hostname'
+            }
+        }
 
         stage('Back-end') {
             agent {
+                sh 'hostname'
                 docker { image 'maven' }
             }
             steps {
