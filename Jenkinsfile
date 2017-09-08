@@ -22,13 +22,21 @@ pipeline {
 				}
 			}
         }
-        stage('Front-end') {
+        stage('nothing') {
             agent {
-                docker { image 'tomcat:8.0-jre8-alpine'}
+                docker { 
+                    reuseNode false
+                    image 'tomcat:8.0-jre8-alpine'}
             }
             steps {
                 //unstash 'app'
                 sh 'ls'
+            }
+        }
+        stage ('docker-build'){
+            steps
+            {
+                sh 'docker build -t tomtest .'
             }
         }
     }
