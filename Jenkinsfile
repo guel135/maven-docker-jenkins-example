@@ -21,7 +21,7 @@ pipeline {
                // sh 'sudo apt-get update && sudo apt-get install -y git'
                 //checkout([$class: 'GitSCM', branches: [[name: 'master']], userRemoteConfigs: [[  url: 'https://github.com/guel135/maven-docker-jenkins-example']]])
                 sh 'hostname && pwd && echo $JAVA_HOME'
-                sh 'set JAVA_HOME=/docker-java-home'
+                sh 'set JAVA_HOME=/usr/local/bin/docker-java-home'
                 sh 'hostname && pwd && echo $JAVA_HOME'
 
                 sh 'mvn  clean package'
