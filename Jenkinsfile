@@ -22,17 +22,7 @@ pipeline {
 				}
 			}
         }
-        stage('nothing') {
-            agent {
-                docker { 
-                    reuseNode false
-                    image 'tomcat:8.0-jre8-alpine'}
-            }
-            steps {
-                //unstash 'app'
-                sh 'ls'
-            }
-        }
+
         stage ('docker-build'){
             steps
             {
