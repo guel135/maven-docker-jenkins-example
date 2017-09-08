@@ -11,7 +11,10 @@ pipeline {
         stage('Back-end') {
             agent {
                 
-                docker { image 'maven' }
+                docker { 
+                    image 'maven'
+                    label 'dockerplay'
+                 }
             }
             steps {
                 //sh 'apk update && apk upgrade && apk add --no-cache bash git openssh'
