@@ -29,5 +29,11 @@ pipeline {
                 sh 'docker build -t tomtest .'
             }
         }
+        stage ('clean-ws'){
+            steps
+            {
+                cleanWs()
+            }
+        }
     }
 }
