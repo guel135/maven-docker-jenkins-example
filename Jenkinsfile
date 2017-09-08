@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent {label 'dockerplay'}
     stages {
 
         stage('Back-end') {
