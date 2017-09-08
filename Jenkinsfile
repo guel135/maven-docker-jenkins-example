@@ -12,7 +12,7 @@ pipeline {
         stage ('docker-build'){
             steps
             {
-                unstash 'app'
+                
                 sh 'pwd'
                 sh 'ls'
                 sh 'docker build -t tomtest .'
