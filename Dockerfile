@@ -1,5 +1,5 @@
 
-FROM tomcat:8.0-jre8-alpine
+FROM tomcat
 LABEL maintainer "guel135@gmail.com"
 
 #Tomcat images expose 8080
