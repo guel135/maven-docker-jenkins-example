@@ -12,6 +12,7 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: 'master']], userRemoteConfigs: [[  url: 'https://github.com/guel135/maven-docker-jenkins-example']]])
 
                 sh 'mvn  clean package'
+                stash includes: 'target/*.war', name: 'app' 
 
             }
             			post {
@@ -23,10 +24,11 @@ pipeline {
         }
         stage('Front-end') {
             agent {
-                docker { image 'node:7-alpine' }
+                docker { image 'tomcat:8.0-jre8-alpine'}
             }
             steps {
                 sh 'node --version'
+                unstash 'app'
             }
         }
     }
