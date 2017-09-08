@@ -10,7 +10,7 @@ pipeline {
 
         stage('Back-end') {
             agent {
-                sh 'hostname'
+                
                 docker { image 'maven' }
             }
             steps {
