@@ -28,7 +28,7 @@ pipeline {
             }
             steps {
                 unstash 'app'
-                sleep 300
+                sh 'ls'
             }
         }
     }
