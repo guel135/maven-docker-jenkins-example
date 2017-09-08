@@ -27,7 +27,6 @@ pipeline {
                 docker { image 'tomcat:8.0-jre8-alpine'}
             }
             steps {
-                sh 'node --version'
                 unstash 'app'
             }
         }
