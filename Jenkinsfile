@@ -26,6 +26,8 @@ pipeline {
         stage ('docker-build'){
             steps
             {
+                sh 'pwd'
+                sh 'ls'
                 sh 'docker build -t tomtest .'
             }
         }
