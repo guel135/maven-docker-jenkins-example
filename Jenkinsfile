@@ -19,8 +19,8 @@ pipeline {
             steps {
                 //sh 'apk update && apk upgrade && apk add --no-cache bash git openssh'
                // sh 'sudo apt-get update && sudo apt-get install -y git'
-                checkout([$class: 'GitSCM', branches: [[name: 'master']], userRemoteConfigs: [[  url: 'https://github.com/guel135/maven-docker-jenkins-example']]])
-                sh 'hostname && pwd && whoami'
+                //checkout([$class: 'GitSCM', branches: [[name: 'master']], userRemoteConfigs: [[  url: 'https://github.com/guel135/maven-docker-jenkins-example']]])
+                sh 'hostname && pwd '
                 sh 'mvn  clean package'
                 stash includes: 'target/*.war', name: 'app' 
 
